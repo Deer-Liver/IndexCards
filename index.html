@@ -1,1 +1,228 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Printable Social-Emotional Learning Cards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .page {
+            width: 8.5in;
+            background-color: white;
+            margin: 0 auto 30px auto;
+            padding: 0.25in;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .card {
+            width: 3.5in;
+            height: 2.5in;
+            border: 1px solid #ccc;
+            margin-bottom: 0.25in;
+            padding: 15px;
+            position: relative;
+            background-color: white;
+            page-break-inside: avoid;
+            box-sizing: border-box;
+        }
+        .card-symbol {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            color: #cc0000;
+        }
+        .card-number {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 18px;
+            color: #cc0000;
+        }
+        .card-title {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .card-content {
+            font-size: 12px;
+            line-height: 1.4;
+        }
+        @media print {
+            body { background-color: white; }
+            .page { box-shadow: none; width: 100%; padding: 0; margin: 0; }
+            @page { margin: 0.5cm; }
+        }
+        .print-button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .print-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">Print Cards</button>
+    
+    <div class="page">
+        <div class="card-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-symbol">♦</div>
+                <div class="card-number">6</div>
+                <div class="card-title">Impulse Control</div>
+                <div class="card-content">
+                    <p>What was a mistake that you made because you were rushing? How can slowing down or planning help?</p>
+                    <p>Think of a time when you screamed at or hurt someone. What can you do to remind yourself to stop and think before reacting?</p>
+                </div>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-symbol">♦</div>
+                <div class="card-number">4</div>
+                <div class="card-title">Media Literacy</div>
+                <div class="card-content">
+                    <p>What is your favorite show or game and why? Who created it? Why did they make it?</p>
+                    <p>Think of a commercial or advertisement. What did it sell? What kinds of people might buy it? What was used to attract your attention?</p>
+                </div>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-symbol">♣</div>
+                <div class="card-number">3</div>
+                <div class="card-title">Creativity</div>
+                <div class="card-content">
+                    <p>Find an object near you. Come up with five different ways to use it.</p>
+                    <p>Think of a chore you have to do but don't enjoy doing. How can you make it more fun?</p>
+                </div>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-symbol">♣</div>
+                <div class="card-number">K</div>
+                <div class="card-title">Perspective-Taking</div>
+                <div class="card-content">
+                    <p>Think of 3 people who are very different from you. Describe their dream birthday party (location, theme, activities, music, food).</p>
+                    <p>Think of someone who acted mean toward you. What might have happened for that person to behave in such a way?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="card-container">
+            <!-- Card 5 -->
+            <div class="card">
+                <div class="card-symbol">♠</div>
+                <div class="card-number">5</div>
+                <div class="card-title">Identity</div>
+                <div class="card-content">
+                    <p>Describe who you are. How would your friends describe you?</p>
+                    <p>Think of one aspect of your identity. What do you like in common with others? What makes each one of you unique?</p>
+                </div>
+            </div>
+            
+            <!-- Card 6 -->
+            <div class="card">
+                <div class="card-symbol">♠</div>
+                <div class="card-number">4</div>
+                <div class="card-title">Community</div>
+                <div class="card-content">
+                    <p>Describe the members of your family. What does everyone have in common? What about differences?</p>
+                    <p>Describe your neighborhood. What do families have in common? How is your city similar or different from other places you know?</p>
+                </div>
+            </div>
+            
+            <!-- Card 7 -->
+            <div class="card">
+                <div class="card-symbol">♦</div>
+                <div class="card-number">Q</div>
+                <div class="card-title">Goal Setting</div>
+                <div class="card-content">
+                    <p>Name one skill or sport that you want to learn or improve. What do you want to be able to do with this skill or sport?</p>
+                    <p>What can you do to reach your goal? How long will it take?</p>
+                </div>
+            </div>
+            
+            <!-- Card 8 -->
+            <div class="card">
+                <div class="card-symbol">♥</div>
+                <div class="card-number">8</div>
+                <div class="card-title">Self-Confidence</div>
+                <div class="card-content">
+                    <p>What was the bravest thing you have ever done? Why did you do it? How did you feel afterward?</p>
+                    <p>What does failure mean to you?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="card-container">
+            <!-- Card 9 -->
+            <div class="card">
+                <div class="card-symbol">♥</div>
+                <div class="card-number">6</div>
+                <div class="card-title">Self-Reflection</div>
+                <div class="card-content">
+                    <p>Describe a time when you got really mad. Roleplay what you said and did.</p>
+                    <p>Imagine that you time traveled back to your younger self. What advice would you give yourself?</p>
+                </div>
+            </div>
+            
+            <!-- Card 10 -->
+            <div class="card">
+                <div class="card-symbol">♥</div>
+                <div class="card-number">4</div>
+                <div class="card-title">Curiosity</div>
+                <div class="card-content">
+                    <p>Come up with an "I wonder..." question about something you saw or did today.</p>
+                    <p>List the steps you could take to get your question answered.</p>
+                </div>
+            </div>
+            
+            <!-- Card 11 -->
+            <div class="card">
+                <div class="card-symbol">♣</div>
+                <div class="card-number">5</div>
+                <div class="card-title">Dignity</div>
+                <div class="card-content">
+                    <p>Name three things that make you who you are, and no one can take them away from you.</p>
+                    <p>What do you like about yourself? What is the difference between self-esteem and self-worth?</p>
+                </div>
+            </div>
+            
+            <!-- Card 12 -->
+            <div class="card">
+                <div class="card-symbol">♦</div>
+                <div class="card-number">7</div>
+                <div class="card-title">Taking Risks</div>
+                <div class="card-content">
+                    <p>Describe a time when you did something that you felt scared to do. What did you learn?</p>
+                    <p>What is a risk that you want to take but shouldn't? What is a chance that you don't want to take but should?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
