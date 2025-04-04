@@ -1,228 +1,510 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Printable Social-Emotional Learning Cards</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Göbekli Tepe & Karahan Tepe: Stone Age Wonders</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 20px;
-            background-color: #f5f5f5;
+        :root {
+            --primary-color: #8b5d33;
+            --secondary-color: #5c4827;
+            --accent-color: #d4b483;
+            --background-color: #f5f3e7;
+            --text-color: #333333;
         }
-        .page {
-            width: 8.5in;
-            background-color: white;
-            margin: 0 auto 30px auto;
-            padding: 0.25in;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-        .card {
-            width: 3.5in;
-            height: 2.5in;
-            border: 1px solid #ccc;
-            margin-bottom: 0.25in;
-            padding: 15px;
-            position: relative;
-            background-color: white;
-            page-break-inside: avoid;
+        
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .card-symbol {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            font-size: 18px;
-            color: #cc0000;
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
         }
-        .card-number {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 18px;
-            color: #cc0000;
-        }
-        .card-title {
-            text-align: center;
-            font-weight: bold;
-            margin-top: 25px;
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-        .card-content {
-            font-size: 12px;
-            line-height: 1.4;
-        }
-        @media print {
-            body { background-color: white; }
-            .page { box-shadow: none; width: 100%; padding: 0; margin: 0; }
-            @page { margin: 0.5cm; }
-        }
-        .print-button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #4CAF50;
+        
+        header {
+            background-color: var(--primary-color);
             color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
+            text-align: center;
+            padding: 2rem 0;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/api/placeholder/1200/400");
+            background-size: cover;
+            background-position: center;
         }
-        .print-button:hover {
-            background-color: #45a049;
+        
+        nav {
+            background-color: var(--secondary-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            padding: 1rem 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        section {
+            margin-bottom: 4rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .intro-text {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .site-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+        
+        .site-image {
+            height: 300px;
+            background-color: #e0e0e0;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .site-info {
+            padding: 1.5rem;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 2rem auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--accent-color);
+            border: 4px solid var(--primary-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        
+        .left {
+            left: 0;
+        }
+        
+        .right {
+            left: 50%;
+        }
+        
+        .left::after {
+            right: -10px;
+        }
+        
+        .right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 250px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .interactive-map {
+            height: 400px;
+            background-color: #e0e0e0;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+        
+        .feature-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 2rem;
+        }
+        
+        .quiz-section {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .left::after, .right::after {
+                left: 21px;
+            }
+            
+            .right {
+                left: 0;
+            }
+            
+            .feature-comparison {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <button class="print-button" onclick="window.print()">Print Cards</button>
+    <header>
+        <h1>Göbekli Tepe & Karahan Tepe</h1>
+        <p>Stone Age Wonders of Anatolia</p>
+    </header>
     
-    <div class="page">
-        <div class="card-container">
-            <!-- Card 1 -->
-            <div class="card">
-                <div class="card-symbol">♦</div>
-                <div class="card-number">6</div>
-                <div class="card-title">Impulse Control</div>
-                <div class="card-content">
-                    <p>What was a mistake that you made because you were rushing? How can slowing down or planning help?</p>
-                    <p>Think of a time when you screamed at or hurt someone. What can you do to remind yourself to stop and think before reacting?</p>
-                </div>
-            </div>
-            
-            <!-- Card 2 -->
-            <div class="card">
-                <div class="card-symbol">♦</div>
-                <div class="card-number">4</div>
-                <div class="card-title">Media Literacy</div>
-                <div class="card-content">
-                    <p>What is your favorite show or game and why? Who created it? Why did they make it?</p>
-                    <p>Think of a commercial or advertisement. What did it sell? What kinds of people might buy it? What was used to attract your attention?</p>
-                </div>
-            </div>
-            
-            <!-- Card 3 -->
-            <div class="card">
-                <div class="card-symbol">♣</div>
-                <div class="card-number">3</div>
-                <div class="card-title">Creativity</div>
-                <div class="card-content">
-                    <p>Find an object near you. Come up with five different ways to use it.</p>
-                    <p>Think of a chore you have to do but don't enjoy doing. How can you make it more fun?</p>
-                </div>
-            </div>
-            
-            <!-- Card 4 -->
-            <div class="card">
-                <div class="card-symbol">♣</div>
-                <div class="card-number">K</div>
-                <div class="card-title">Perspective-Taking</div>
-                <div class="card-content">
-                    <p>Think of 3 people who are very different from you. Describe their dream birthday party (location, theme, activities, music, food).</p>
-                    <p>Think of someone who acted mean toward you. What might have happened for that person to behave in such a way?</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <nav>
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#gobekli">Göbekli Tepe</a></li>
+            <li><a href="#karahan">Karahan Tepe</a></li>
+            <li><a href="#comparison">Comparison</a></li>
+            <li><a href="#significance">Significance</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#quiz">Quiz</a></li>
+        </ul>
+    </nav>
     
-    <div class="page">
-        <div class="card-container">
-            <!-- Card 5 -->
-            <div class="card">
-                <div class="card-symbol">♠</div>
-                <div class="card-number">5</div>
-                <div class="card-title">Identity</div>
-                <div class="card-content">
-                    <p>Describe who you are. How would your friends describe you?</p>
-                    <p>Think of one aspect of your identity. What do you like in common with others? What makes each one of you unique?</p>
+    <main>
+        <section id="introduction" class="hero">
+            <h2>Rewriting Human History</h2>
+            <div class="intro-text">
+                <p>Discover the revolutionary archaeological sites that are forcing us to rethink the dawn of civilization. Built over 11,500 years ago by hunter-gatherers before the advent of agriculture, these monumental structures challenge everything we thought we knew about prehistoric human societies.</p>
+            </div>
+            
+            <div class="interactive-map">
+                <!-- Map placeholder -->
+                <img src="/api/placeholder/1000/400" alt="Map showing locations of Göbekli Tepe and Karahan Tepe in Turkey" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">9500 BCE</h3>
+                        <p>Construction of Göbekli Tepe begins</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">9000 BCE</h3>
+                        <p>Early agricultural practices begin to develop</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">8000 BCE</h3>
+                        <p>Göbekli Tepe deliberately buried</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">3000 BCE</h3>
+                        <p>Construction of Stonehenge</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3 class="timeline-date">2500 BCE</h3>
+                        <p>Great Pyramid of Giza</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="gobekli">
+            <h2>Göbekli Tepe: The First Temple</h2>
+            
+            <div class="site-card">
+                <div class="site-image" style="background-image:url('/api/placeholder/1000/300')"></div>
+                <div class="site-info">
+                    <h3>Discovery & Excavation</h3>
+                    <p>First noted in a survey in 1963, Göbekli Tepe was initially dismissed as a Byzantine cemetery. It wasn't until 1994 that German archaeologist Klaus Schmidt recognized its true significance. Systematic excavations began in 1995, revealing what would become known as the world's oldest temple complex.</p>
+                    
+                    <h3>Architectural Marvel</h3>
+                    <p>The site consists of several circular and oval enclosures featuring massive T-shaped limestone pillars arranged in rings. These pillars, weighing up to 10 tons and standing 5.5 meters tall, were quarried, carved, transported, and erected by people who had no metal tools, no pottery, and no domesticated animals for labor.</p>
+                    
+                    <h3>Symbolic Artistry</h3>
+                    <p>The pillars are adorned with intricate relief carvings depicting various animals (foxes, snakes, boars, cranes), abstract symbols, and anthropomorphic features. Many of the T-shaped pillars appear to represent stylized human figures, with arms occasionally carved on the sides.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="karahan">
+            <h2>Karahan Tepe: The Sister Site</h2>
+            
+            <div class="site-card">
+                <div class="site-image" style="background-image:url('/api/placeholder/1000/300')"></div>
+                <div class="site-info">
+                    <h3>Recent Excavations</h3>
+                    <p>Located approximately 35 km east of Göbekli Tepe, Karahan Tepe is part of the "Taş Tepeler" (Stone Hills) project exploring multiple sites in the region. While identified in 1997, systematic excavations only began in 2019.</p>
+                    
+                    <h3>Unique Features</h3>
+                    <p>While also featuring T-shaped pillars similar to those at Göbekli Tepe, Karahan Tepe has many structures carved directly into the bedrock rather than built with freestanding stones. One of its most distinctive features is the "Human Head Pit" with 3D sculpted human heads emerging from the bedrock.</p>
+                    
+                    <h3>Ritual Spaces</h3>
+                    <p>Karahan Tepe includes more elaborate architectural elements, including cisterns and channels, suggesting different ritual practices compared to Göbekli Tepe. Some pillars depict male genitalia, a feature not prominent at Göbekli Tepe.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="comparison">
+            <h2>Comparing the Sites</h2>
+            
+            <div class="feature-comparison">
+                <div>
+                    <h3>Göbekli Tepe</h3>
+                    <ul>
+                        <li>Discovered earlier, more extensively excavated</li>
+                        <li>Freestanding T-shaped pillars arranged in circles</li>
+                        <li>More animal imagery on pillars</li>
+                        <li>UNESCO World Heritage Site since 2018</li>
+                        <li>Deliberately buried around 8000 BCE</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Karahan Tepe</h3>
+                    <ul>
+                        <li>More recent excavations, still revealing new findings</li>
+                        <li>More integration with natural bedrock</li>
+                        <li>More explicit human representation</li>
+                        <li>Unique architectural elements (cisterns, channels)</li>
+                        <li>Part of the broader "Taş Tepeler" project</li>
+                    </ul>
                 </div>
             </div>
             
-            <!-- Card 6 -->
-            <div class="card">
-                <div class="card-symbol">♠</div>
-                <div class="card-number">4</div>
-                <div class="card-title">Community</div>
-                <div class="card-content">
-                    <p>Describe the members of your family. What does everyone have in common? What about differences?</p>
-                    <p>Describe your neighborhood. What do families have in common? How is your city similar or different from other places you know?</p>
-                </div>
-            </div>
+            <h3>Shared Significance</h3>
+            <p>Both sites demonstrate that hunter-gatherer societies were capable of complex social organization and monumental construction thousands of years before the development of agriculture. They challenge the conventional model that religion and monumental architecture developed only after farming provided food surpluses and sedentary lifestyles.</p>
+        </section>
+        
+        <section id="significance">
+            <h2>Archaeological Significance</h2>
             
-            <!-- Card 7 -->
-            <div class="card">
-                <div class="card-symbol">♦</div>
-                <div class="card-number">Q</div>
-                <div class="card-title">Goal Setting</div>
-                <div class="card-content">
-                    <p>Name one skill or sport that you want to learn or improve. What do you want to be able to do with this skill or sport?</p>
-                    <p>What can you do to reach your goal? How long will it take?</p>
-                </div>
-            </div>
+            <h3>Rewriting Human History</h3>
+            <p>The traditional view held that civilization developed in this order: Agriculture → Surplus → Leisure → Civilization → Monumental Architecture. Göbekli Tepe and Karahan Tepe suggest a new model: Complex Religion → Social Organization → Agriculture. This revolutionary idea suggests that spiritual impulses may have driven the transition to settled life.</p>
             
-            <!-- Card 8 -->
-            <div class="card">
-                <div class="card-symbol">♥</div>
-                <div class="card-number">8</div>
-                <div class="card-title">Self-Confidence</div>
-                <div class="card-content">
-                    <p>What was the bravest thing you have ever done? Why did you do it? How did you feel afterward?</p>
-                    <p>What does failure mean to you?</p>
+            <h3>Hunter-Gatherer Capabilities</h3>
+            <p>These sites demonstrate sophisticated organizational abilities among pre-agricultural societies, challenging simplistic views of prehistoric hunter-gatherers as simple or primitive. They reveal complex social networks spanning significant geographical areas.</p>
+            
+            <h3>Ongoing Research</h3>
+            <p>The comprehensive "Taş Tepeler" survey has identified at least 12 similar sites in the region, suggesting an extensive "sacred landscape" covering southeastern Turkey. This points to a widespread cultural complex rather than isolated sites.</p>
+        </section>
+        
+        <section id="gallery">
+            <h2>Image Gallery</h2>
+            
+            <div class="gallery">
+                <div class="gallery-item" style="background-image:url('/api/placeholder/300/250')">
+                    <div class="gallery-caption">Pillar 43 with its famous scorpion, bird, and other animal carvings</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('/api/placeholder/300/250')">
+                    <div class="gallery-caption">Aerial view of Enclosure D at Göbekli Tepe</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('/api/placeholder/300/250')">
+                    <div class="gallery-caption">T-shaped pillars at Karahan Tepe</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('/api/placeholder/300/250')">
+                    <div class="gallery-caption">The "Human Head Pit" at Karahan Tepe</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('/api/placeholder/300/250')">
+                    <div class="gallery-caption">Fox carving on pillar at Göbekli Tepe</div>
+                </div>
+                <div class="gallery-item" style="background-image:url('/api/placeholder/300/250')">
+                    <div class="gallery-caption">Reconstruction of how Göbekli Tepe may have appeared</div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+        
+        <section id="quiz" class="quiz-section">
+            <h2>Test Your Knowledge</h2>
+            
+            <div id="quiz-container">
+                <p><strong>1. How old are Göbekli Tepe and Karahan Tepe?</strong></p>
+                <div>
+                    <input type="radio" name="q1" id="q1a"> <label for="q1a">About 5,000 years old</label><br>
+                    <input type="radio" name="q1" id="q1b"> <label for="q1b">About 8,000 years old</label><br>
+                    <input type="radio" name="q1" id="q1c"> <label for="q1c">About 11,500 years old</label><br>
+                    <input type="radio" name="q1" id="q1d"> <label for="q1d">About 15,000 years old</label>
+                </div>
+                
+                <p><br><strong>2. Who led the major excavations at Göbekli Tepe beginning in 1995?</strong></p>
+                <div>
+                    <input type="radio" name="q2" id="q2a"> <label for="q2a">Howard Carter</label><br>
+                    <input type="radio" name="q2" id="q2b"> <label for="q2b">Klaus Schmidt</label><br>
+                    <input type="radio" name="q2" id="q2c"> <label for="q2c">Zahi Hawass</label><br>
+                    <input type="radio" name="q2" id="q2d"> <label for="q2d">Mary Leakey</label>
+                </div>
+                
+                <p><br><strong>3. What is significant about the pillars at these sites?</strong></p>
+                <div>
+                    <input type="radio" name="q3" id="q3a"> <label for="q3a">They are made of rare metals</label><br>
+                    <input type="radio" name="q3" id="q3b"> <label for="q3b">They feature intricate animal carvings</label><br>
+                    <input type="radio" name="q3" id="q3c"> <label for="q3c">They are the oldest examples of writing</label><br>
+                    <input type="radio" name="q3" id="q3d"> <label for="q3d">They were transported from Egypt</label>
+                </div>
+                
+                <p><br><strong>4. Why are these sites revolutionary for archaeological theory?</strong></p>
+                <div>
+                    <input type="radio" name="q4" id="q4a"> <label for="q4a">They show complex monumental structures before agriculture</label><br>
+                    <input type="radio" name="q4" id="q4b"> <label for="q4b">They contain the earliest examples of metal tools</label><br>
+                    <input type="radio" name="q4" id="q4c"> <label for="q4c">They prove ancient alien intervention</label><br>
+                    <input type="radio" name="q4" id="q4d"> <label for="q4d">They are the oldest human settlements ever found</label>
+                </div>
+                
+                <p><br><strong>5. What shape are the distinctive pillars at both sites?</strong></p>
+                <div>
+                    <input type="radio" name="q5" id="q5a"> <label for="q5a">Rectangular</label><br>
+                    <input type="radio" name="q5" id="q5b"> <label for="q5b">Circular</label><br>
+                    <input type="radio" name="q5" id="q5c"> <label for="q5c">T-shaped</label><br>
+                    <input type="radio" name="q5" id="q5d"> <label for="q5d">Pyramid-shaped</label>
+                </div>
+                
+                <button style="margin-top: 20px; padding: 10px 20px; background-color: var(--primary-color); color: white; border: none; border-radius: 4px; cursor: pointer;">Check Answers</button>
+            </div>
+        </section>
+    </main>
     
-    <div class="page">
-        <div class="card-container">
-            <!-- Card 9 -->
-            <div class="card">
-                <div class="card-symbol">♥</div>
-                <div class="card-number">6</div>
-                <div class="card-title">Self-Reflection</div>
-                <div class="card-content">
-                    <p>Describe a time when you got really mad. Roleplay what you said and did.</p>
-                    <p>Imagine that you time traveled back to your younger self. What advice would you give yourself?</p>
-                </div>
-            </div>
-            
-            <!-- Card 10 -->
-            <div class="card">
-                <div class="card-symbol">♥</div>
-                <div class="card-number">4</div>
-                <div class="card-title">Curiosity</div>
-                <div class="card-content">
-                    <p>Come up with an "I wonder..." question about something you saw or did today.</p>
-                    <p>List the steps you could take to get your question answered.</p>
-                </div>
-            </div>
-            
-            <!-- Card 11 -->
-            <div class="card">
-                <div class="card-symbol">♣</div>
-                <div class="card-number">5</div>
-                <div class="card-title">Dignity</div>
-                <div class="card-content">
-                    <p>Name three things that make you who you are, and no one can take them away from you.</p>
-                    <p>What do you like about yourself? What is the difference between self-esteem and self-worth?</p>
-                </div>
-            </div>
-            
-            <!-- Card 12 -->
-            <div class="card">
-                <div class="card-symbol">♦</div>
-                <div class="card-number">7</div>
-                <div class="card-title">Taking Risks</div>
-                <div class="card-content">
-                    <p>Describe a time when you did something that you felt scared to do. What did you learn?</p>
-                    <p>What is a risk that you want to take but shouldn't? What is a chance that you don't want to take but should?</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <footer>
+        <p>&copy; 2025 - Göbekli Tepe and Karahan Tepe Project</p>
+        <p>References:</p>
+        <ul style="list-style: none; padding: 0;">
+            <li>Schmidt, Klaus. (2012). <i>Göbekli Tepe: A Stone Age Sanctuary in South-Eastern Anatolia</i>.</li>
+            <li>Dietrich, O., et al. (2012). "The Role of Cult and Feasting in the Emergence of Neolithic Communities."</li>
+            <li>UNESCO World Heritage Site Profile: Göbekli Tepe</li>
+        </ul>
+    </footer>
 </body>
 </html>
