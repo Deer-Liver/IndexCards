@@ -3,111 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple Notes Taker</title>
+    <title>Multiple Notes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 600px;
-            margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #4CAF50;
-        }
-
-        .note-container {
-            margin-top: 20px;
-        }
-
-        .note {
-            margin-bottom: 20px;
+            background-color: #f4f4f4;
         }
 
         textarea {
             width: 100%;
             height: 150px;
-            padding: 10px;
+            margin-bottom: 10px;
+            padding: 8px;
             border: 1px solid #ccc;
-            margin-top: 10px;
-            font-size: 16px;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        button:hover {
-            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Multiple Notes Taker</h1>
-        <div class="note-container" id="noteContainer">
-            <!-- Notes will be dynamically added here -->
-        </div>
-        <button onclick="addNote()">Add New Note</button>
-    </div>
-
-    <script>
-        // Function to load the saved notes from localStorage
-        function loadNotes() {
-            const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-            const noteContainer = document.getElementById('noteContainer');
-            noteContainer.innerHTML = ''; // Clear the container before adding notes
-
-            savedNotes.forEach((note, index) => {
-                const noteElement = document.createElement('div');
-                noteElement.classList.add('note');
-                noteElement.innerHTML = `
-                    <h3>Note ${index + 1}</h3>
-                    <textarea id="note${index}" placeholder="Write your note here...">${note}</textarea>
-                    <button onclick="saveNote(${index})">Save Note ${index + 1}</button>
-                `;
-                noteContainer.appendChild(noteElement);
-            });
-        }
-
-        // Function to add a new note
-        function addNote() {
-            const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-            savedNotes.push(""); // Add an empty note to the array
-            localStorage.setItem('notes', JSON.stringify(savedNotes));
-            loadNotes(); // Reload notes after adding a new one
-        }
-
-        // Function to save the content of a specific note
-        function saveNote(index) {
-            const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
-            const noteContent = document.getElementById(`note${index}`).value;
-            savedNotes[index] = noteContent; // Update the specific note
-            localStorage.setItem('notes', JSON.stringify(savedNotes));
-        }
-
-        // Load the notes when the page loads
-        window.onload = loadNotes;
-    </script>
+    <h1>Multiple Notes</h1>
+    <textarea placeholder="Write your first note..."></textarea>
+    <textarea placeholder="Write your second note..."></textarea>
+    <textarea placeholder="Write your third note..."></textarea>
 </body>
 </html>
