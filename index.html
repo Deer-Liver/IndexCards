@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Note Taker</title>
+    <title>Multiple Notes Taker</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,9 +27,17 @@
             color: #4CAF50;
         }
 
+        .note-container {
+            margin-top: 20px;
+        }
+
+        .note {
+            margin-bottom: 20px;
+        }
+
         textarea {
             width: 100%;
-            height: 200px;
+            height: 150px;
             padding: 10px;
             border: 1px solid #ccc;
             margin-top: 10px;
@@ -52,45 +60,54 @@
         button:hover {
             background-color: #45a049;
         }
-
-        .note {
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #e9e9e9;
-            border-radius: 4px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Simple Note Taker</h1>
-        <textarea id="noteInput" placeholder="Write your note here..."></textarea>
-        <button onclick="saveNote()">Save Note</button>
-
-        <div class="note" id="savedNote">
-            <strong>Saved Note:</strong>
-            <p id="noteDisplay">Your saved note will appear here after you save it.</p>
+        <h1>Multiple Notes Taker</h1>
+        <div class="note-container" id="noteContainer">
+            <!-- Notes will be dynamically added here -->
         </div>
+        <button onclick="addNote()">Add New Note</button>
     </div>
 
     <script>
-        // Load saved note on page load
-        window.onload = function() {
-            const savedNote = localStorage.getItem('note');
-            if (savedNote) {
-                document.getElementById('noteDisplay').textContent = savedNote;
-                document.getElementById('noteInput').value = savedNote;  // Preload textarea with saved note
-            }
-        };
+        // Function to load the saved notes from localStorage
+        function loadNotes() {
+            const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+            const noteContainer = document.getElementById('noteContainer');
+            noteContainer.innerHTML = ''; // Clear the container before adding notes
 
-        // Save note in localStorage
-        function saveNote() {
-            const noteText = document.getElementById('noteInput').value.trim();
-            if (noteText !== '') {
-                localStorage.setItem('note', noteText);  // Save to localStorage
-                document.getElementById('noteDisplay').textContent = noteText; // Display saved note
-            }
+            savedNotes.forEach((note, index) => {
+                const noteElement = document.createElement('div');
+                noteElement.classList.add('note');
+                noteElement.innerHTML = `
+                    <h3>Note ${index + 1}</h3>
+                    <textarea id="note${index}" placeholder="Write your note here...">${note}</textarea>
+                    <button onclick="saveNote(${index})">Save Note ${index + 1}</button>
+                `;
+                noteContainer.appendChild(noteElement);
+            });
         }
+
+        // Function to add a new note
+        function addNote() {
+            const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+            savedNotes.push(""); // Add an empty note to the array
+            localStorage.setItem('notes', JSON.stringify(savedNotes));
+            loadNotes(); // Reload notes after adding a new one
+        }
+
+        // Function to save the content of a specific note
+        function saveNote(index) {
+            const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+            const noteContent = document.getElementById(`note${index}`).value;
+            savedNotes[index] = noteContent; // Update the specific note
+            localStorage.setItem('notes', JSON.stringify(savedNotes));
+        }
+
+        // Load the notes when the page loads
+        window.onload = loadNotes;
     </script>
 </body>
 </html>
