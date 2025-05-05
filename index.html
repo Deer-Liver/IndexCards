@@ -1,30 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multiple Notes</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        textarea {
-            width: 100%;
-            height: 150px;
-            margin-bottom: 10px;
-            padding: 8px;
-            border: 1px solid #ccc;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Society of the Snow</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #444;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1, header h2 {
+      margin: 0;
+    }
+    nav {
+      background-color: #333;
+      overflow: hidden;
+    }
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+    main {
+      padding: 20px;
+    }
+    section.page {
+      margin-top: 40px;
+    }
+    section h3 {
+      color: #444;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    footer {
+      background-color: #444;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
 </head>
 <body>
-    <h1>Multiple Notes</h1>
-    <textarea placeholder="Write your first note..."></textarea>
-    <textarea placeholder="Write your second note..."></textarea>
-    <textarea placeholder="Write your third note..."></textarea>
-</body>
-</html>
+  <header>
+    <h1>Society of the Snow</h1>
+    <h2>The true story of the 1972 Andes flight disaster</h2>
+  </header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#people">People</a>
+    <a href="#more-info">More Info</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#sources">Sources</a>
+  </nav>
+  <main>
+    <section id="home">
+      <p><strong>Thesis Statement:</strong> “Society of the Snow” (2023) is a film adaptation of the 2009 book of the same name, directed by J.A. Bayona. It meticulously recreates the true story of the 1972 Andes flight disaster, in which 16 people survived a harrowing ordeal. This site explores the film, the actual events, and the difficult decisions made by survivors. Join us to engage in high-stakes ethical reasoning as you consider what choices you would make in such extreme circumstances.</p>
+    </section>
+
+    <section id="people">
+      <h3>Survivors</h3>
+      <ul>
+        <li><strong>Roberto Canessa:</strong> Medical student who played a key role in the survival effort by helping tend to the injured and organizing efforts to search for help.</li>
+        <li><strong>Fernando Parrado:</strong> Mechanical engineering student who, along with Canessa, hiked for days in search of help, eventually finding rescue.</li>
+        <li><strong>José Luis “Coche” Inciarte:</strong> One of the survivors; specific details about his role are less documented.</li>
+        <li><strong>Javier Methol:</strong> Uruguayan businessman and lecturer; one of the 16 survivors.</li>
+        <li><strong>Numa Turcatti:</strong> Not part of the rugby team; joined the trip due to friends' encouragement; died on December 11, 1972.</li>
+        <li><strong>Eduardo Strauch:</strong> Survivor who later became an architect and painter.</li>
+        <li><strong>Adolfo Strauch:</strong> Cousin of Eduardo; contributed to survival efforts.</li>
+        <li><strong>Gustavo Zerbino:</strong> Medical student who assisted with treating injuries.</li>
+        <li><strong>Antonio “Tintin” Vizintín:</strong> Participated in the expedition to find help.</li>
+        <li><strong>Alvaro Mangino:</strong> Survivor who later became an advocate for resilience and teamwork.</li>
+        <li><strong>Daniel Fernández:</strong> Assisted in various survival tasks.</li>
+        <li><strong>Roy Harley:</strong> Radio technician who helped maintain communication devices.</li>
+        <li><strong>Alfredo Delgado:</strong> Survivor who contributed to group morale.</li>
+        <li><strong>Roberto Francois:</strong> Assisted in survival efforts.</li>
+        <li><strong>Pedro Algorta:</strong> Survivor who later pursued a career in business.</li>
+        <li><strong>Carlos Páez Rodríguez:</strong> Son of renowned artist Carlos Páez Vilaró; later became a motivational speaker.</li>
+      </ul>
+    </section>
+
+    <section id="more-info">
+      <h3>More Information</h3>
+      <ul>
+        <li>Of the 45 people on the plane, 12 died in the crash, and 33 survived, some with injuries.</li>
+        <li>The survivors were stranded in the Andes at 11,500 feet above sea level, surrounded by snow and freezing temperatures.</li>
+        <li>Although the fuselage remained intact, it offered limited shelter from the cold.</li>
+        <li>The food supply (mostly candy bars and wine) ran out after about a week.</li>
+        <li>Eventually, they made the grim decision to eat the bodies of the dead to stay alive.</li>
+        <li>Over time, six more people died from injuries and exposure to the cold.</li>
+        <li>On October 29, an avalanche buried part of the fuselage and killed eight more survivors.</li>
+      </ul>
+    </section>
+
+    <section id="timeline">
+      <h3>Timeline of Events</h3>
+      <ul>
+        <li><strong>October 12, 1972:</strong> Flight departs Montevideo, Uruguay.</li>
+        <li><strong>October 13, 1972:</strong> Plane crashes in the Andes Mountains.</li>
+        <li><strong>October 21, 1972:</strong> Search efforts are called off after 8 days.</li>
+        <li><strong>October 29, 1972:</strong> Avalanche strikes, killing 8 more survivors.</li>
+        <li><strong>December 12, 1972:</strong> Canessa and Parrado find help after a 10-day trek.</li>
+        <li><strong>December 23, 1972:</strong> Remaining survivors are rescued.</li>
+      </ul>
+    </section>
+
+    <section id="quiz">
+      <h3>Interactive Scenario: “You’ve Crashed! Now what?”</h3>
+      <p>After your pilot incorrectly reported their location, they crashed in the Andes leaving 12 dead, only the main section of the plane intact, and 33 people are left alive. What do you do next?</p>
+      <button onclick="checkAnswer('A')">Run into the mountains</button>
+      <button onclick="checkAnswer('B')">Kill and eat 4 crew members</button>
+      <button onclick="checkAnswer('C')">Scour the plane</button>
+      <button onclick="checkAnswer('D')">Run!</button>
+      <p id="quiz1-result"></p>
+
+      <h3>Follow-up Scenario: “The plane is fine!”</h3>
+      <p>No explosions…yet so now you must survive, you need 3 things: food, water, and shelter. Where do you find them?</p>
+      <button onclick="checkAnswer2('A')">Run into the mountains</button>
+      <button onclick="checkAnswer2('B')">Kill and eat 6 crew members</button>
+      <button onclick="checkAnswer2('C')">Scour the plane</button>
+      <button onclick="checkAnswer2('D')">Starve</button>
+      <p id="quiz2-result"></p>
+    </section>
+
+    <section id="sources">
+      <h3>Sources</h3>
+      <ul>
+        <li><a href="https://en.wikipedia.org/wiki/Uruguayan_Air_Force_Flight_571" target="_blank">Uruguayan Air Force Flight 571 - Wikipedia</a></li>
+        <li><a href="https://www.britannica.com/event/Uruguayan-Air-Force-flight-571" target="_blank">Uruguayan Air Force flight 571 | Crash, Rescue, & Facts | Britannica</a></li>
+        <li><a href="https://abcnews.go.com/US/survivors-1972-uruguay-plane-crash-revisit-tale-extremes/story?id=98405303" target="_blank">Survivors of 1972 Uruguay plane crash revisit their tale of going to extremes - ABC News</a></li>
+        <li><a href="https://time.com/6551709/society-of-the-snow-true-story-netflix/" target="_blank">A Survivor Recalls the Harrowing 1972 Plane Crash Behind Society of the Snow - TIME</a></li>
+        <li><a href="https://www.history.com/this-day-in-history/October-13/uruguayan-air-force-flight-571-crashes-in-the-andes" target="_blank">Uruguayan Air Force Flight 571 crashes in the Andes - HISTORY</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>All content © 2025</p>
+  </footer>
+
+  <script>
+    function checkAnswer(answer) {
+      const result = document.getElementById('quiz1-result');
+      if (answer === 'D') {
+        result.textContent = "Correct! You should distance yourself from the wreck for 30 minutes in case of explosion.";
+      } 
